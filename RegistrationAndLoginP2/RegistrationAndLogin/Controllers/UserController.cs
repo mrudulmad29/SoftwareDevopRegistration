@@ -18,6 +18,7 @@ namespace RegistrationAndLogin.Controllers
         {
             return View();
         }
+
         //Registration POST action 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -201,13 +202,13 @@ namespace RegistrationAndLogin.Controllers
                 Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
             };
 
-            using (var message = new MailMessage(fromEmail, toEmail)
-            {
-                Subject = subject,
-                Body = body,
-                IsBodyHtml = true
-            })
-                smtp.Send(message);
+            //using (var message = new MailMessage(fromEmail, toEmail)
+            //{
+            //    Subject = subject,
+            //    Body = body,
+            //    IsBodyHtml = true
+            //})
+            //    smtp.Send(message);
         }
 
 
